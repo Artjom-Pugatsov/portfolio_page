@@ -15,7 +15,7 @@ function onInfoClick(event: MouseEvent) {
 </script>
 
 <template>
-  <div target="_blank" @click="onInfoClick" rel="noopener noreferrer" class="tile">
+  <div class="tile" target="_blank" @click="onInfoClick" rel="noopener noreferrer" >
     <img :src="imageUrl" :alt="project.title" class="tile-image" />
     <div class="tile-body">
       <h2 class="tile-title">{{ project.title }}</h2>
@@ -36,12 +36,15 @@ function onInfoClick(event: MouseEvent) {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition:
     transform 0.2s,
-    box-shadow 0.2s;
+    box-shadow 0.2s,
+    background 0.2s;
+  cursor: pointer;
 }
 
 .tile:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #2a2a2a;
 }
 
 .tile-image {

@@ -15,14 +15,13 @@ function onInfoClick(event: MouseEvent) {
 </script>
 
 <template>
-  <a :href="project.url" target="_blank" rel="noopener noreferrer" class="tile">
+  <div target="_blank" @click="onInfoClick" rel="noopener noreferrer" class="tile">
     <img :src="imageUrl" :alt="project.title" class="tile-image" />
     <div class="tile-body">
       <h2 class="tile-title">{{ project.title }}</h2>
       <p class="tile-description">{{ project.shortDescription }}</p>
     </div>
-    <button class="tile-info-btn" @click="onInfoClick" aria-label="More info">ⓘ</button>
-  </a>
+  </div>
 </template>
 
 <style scoped>

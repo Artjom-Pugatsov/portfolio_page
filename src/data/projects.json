@@ -1,0 +1,53 @@
+{
+  "projects": [
+    {
+      "id": "project-sequencing",
+      "title": "Transaction sequencer",
+      "image": "/images/genetic_sequencing_improvement.png",
+      "url": "https://github.com/Artjom-Pugatsov/genetic-sequencing",
+      "shortDescription": "Optimization of blockchain transaction sequencing order",
+      "longDescription": "Explores transaction reordering strategies to improve blockchain execution efficiency. Implements a blockchain-independent model for continuous transaction execution and a genetic-based ordering heuristic. Achieved 15% increase in validator revenue and 2× faster congestion clearance. Done as part of my Master's Thesis at TU Delft."
+    },
+    {
+      "id": "project-beta",
+      "title": "Solving JSCOSMR using SAT",
+      "image": "/images/JSOCMSR.png",
+      "url": "https://github.com/Artjom-Pugatsov/JSOCMSR_SAT",
+      "shortDescription": "Solving JSCOSMR using SAT augmented by heuristics",
+      "longDescription": "Solving job scheduling with one common and multiple secondary resources problem using a SAT solver by introducing problem-specific heuristics. Implemented a heurstics encoder that uses Matrix encoding for efficent problem representation and Python scripts for running instances on a super computer. Done as part of Bachelor's thesis at TU Delft."
+    },
+    {
+      "id": "project-ETH-smart-contracts",
+      "title": "Smart contract donation for music",
+      "image": "/images/music_app_screenshot.jpg",
+      "url": "https://github.com/OmarTheMostWanted/trustchain-superapp",
+      "shortDescription": "Donation system for a decentralized music sharing app using ETH",
+      "longDescription": "Builds on top of TU Delft's Android TrustChain Super App's decentralized music sharing app by adding ability to donate ETH to artists. Donations are done done proportional to the listening history via smart contracts. Also adds ability to like songs with a decentralized leaderboard of most liked songs. Develped as part of Blockchain Engineering course at TU Delft in a team of 5 people."
+    },
+        {
+      "id": "project-discord-bot",
+      "title": "Discord imaginary money bot",
+      "image": "/images/Discord money bot.png",
+      "url": "https://github.com/Artjom-Pugatsov/discord_imaginary_money_bot",
+      "shortDescription": "Discord bot for showing others that you have the most meaningless points on a Discord server :)",
+      "longDescription": "A Discord bot for collecting points on a Discord server. You can then wager the points on events, play rock-paper-siccors with others and see yourself crowned as having the most meaningless but fun points on the leaderboard."
+    },
+      {
+      "id": "project-raft-tester",
+      "title": "Raft implementation tester",
+      "image": "/images/saft_error.png",
+      "url": "https://gitlab.com/artjom_pugatsov/ACDP",
+      "shortDescription": "Testing Saft, an open source Raft implementation, by creating schedules",
+      "longDescription": "Raft is a distributed consensus algorithm for a scenario where nodes can crash. Here I tested an open source implementation of Raft with Scala called Saft by creating many schedules and checking the resulting trace for consistency properties. I found an edge case where it broke because response term was ignored. Done as part of Analysis of Concurrent and Distributed Programs course at TU Delft."
+    },
+
+    {
+      "id": "project-raft-tester",
+      "title": "Constraint solver",
+      "image": "/images/n_queens.png",
+      "url": "https://gitlab.com/artjom_pugatsov/np_hard",
+      "shortDescription": "Satisfaction constraint solver on Java",
+      "longDescription": "Constraint solver implemented on Java without any dependencies to solve problems like n queens or Sudoku. Designed modularly so it is easy to add more constraints if required. Made as part of NP Hard Algorithms course at TU Delft."
+    }
+  ]
+}

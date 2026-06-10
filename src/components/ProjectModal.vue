@@ -1,15 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Project } from '@/types'
 
-defineProps<{ project: Project }>()
+const props = defineProps<{ project: Project }>()
 const emit = defineEmits<{ close: [] }>()
+
+const imageUrl = computed(() => import.meta.env.BASE_URL + props.project.image.replace(/^\//, ''))
 </script>
 
 <template>
   <div class="overlay" @click.self="emit('close')">
     <div class="modal">
       <button class="close-btn" @click="emit('close')" aria-label="Close">✕</button>
-      <img :src="project.image" :alt="project.title" class="modal-image" />
+            <img :src="imageUrl" :alt="props.project.title" class="modal-image" />
       <div class="modal-body">
         <h2 class="project_title">{{ project.title }}</h2>
         <p>{{ project.longDescription }}</p>

@@ -1,8 +1,11 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Project } from '@/types'
 
 const props = defineProps<{ project: Project }>()
 const emit = defineEmits<{ info: [project: Project] }>()
+
+const imageUrl = computed(() => import.meta.env.BASE_URL + props.project.image.replace(/^\//, ''))
 
 function onInfoClick(event: MouseEvent) {
   event.preventDefault()
@@ -13,7 +16,7 @@ function onInfoClick(event: MouseEvent) {
 
 <template>
   <a :href="project.url" target="_blank" rel="noopener noreferrer" class="tile">
-    <img :src="project.image" :alt="project.title" class="tile-image" />
+    <img :src="imageUrl" :alt="project.title" class="tile-image" />
     <div class="tile-body">
       <h2 class="tile-title">{{ project.title }}</h2>
       <p class="tile-description">{{ project.shortDescription }}</p>

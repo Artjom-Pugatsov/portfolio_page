@@ -1,47 +1,30 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Project } from '@/types'
-import projectsData from '@/data/projects.json'
-import ProjectTile from '@/components/ProjectTile.vue'
-import ProjectModal from '@/components/ProjectModal.vue'
+import ProjectsTab from './tabs/ProjectsTab.vue'
+import EducationTab from './tabs/EducationTab.vue';
 
 const selectedTab = ref<Number>(1) // Id of the selected tab. 
-
-const projects = projectsData.projects as Project[]
-const selectedProject = ref<Project | null>(null)
 
 </script>
 
 <template>
   <main>
     <div class="tab-selector">
-      <h1 class="tab-selector-tab projects-tab" @click="selectedTab=1" :class="{ 'active-tab': selectedTab==1 }" >My Projects</h1>
-      <h1 class="tab-selector-tab education-tab" @click="selectedTab=2" :class="{ 'active-tab': selectedTab==2 }">My Education</h1>
+      <h1 class="tab-selector-tab projects-tab"
+       @click="selectedTab=1" :class="{ 'active-tab': selectedTab==1 }" >
+       My Projects
+      </h1>
+      <h1 class="tab-selector-tab education-tab"
+       @click="selectedTab=2" :class="{ 'active-tab': selectedTab==2 }">
+        My Education
+      </h1>
     </div>
 
     <!-- //Id of 1 corresponds to projects -->
-    <div class="tab projects-tab"  v-if="selectedTab.valueOf() == 1"> 
-      <div class="grid" >
-        <ProjectTile
-          v-for="project in projects"
-          :key="project.id"
-          :project="project"
-          @info="selectedProject = $event"
-        />
-      </div>
-      <ProjectModal
-        v-if="selectedProject"
-        :project="selectedProject"
-        @close="selectedProject = null"
-      />
-    </div>
 
-    <div class="tab education-tab" v-if="selectedTab.valueOf() == 2">
+    <ProjectsTab class="tab projects-tab"  v-if="selectedTab.valueOf() == 1"></ProjectsTab>
 
-
-
-
-    </div>
+    <EducationTab class="tab education-tab" v-if="selectedTab.valueOf() == 2"></EducationTab>
 
   </main>
 </template>
@@ -90,11 +73,5 @@ main {
 
 .active-tab::after {
   transform: scaleX(1);
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
 }
 </style>
